@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+<div id="map"></div>
+<div id="form">
+    <button onclick="myFunction()">Add marker</button>
+</div>
+<script>
+    function initMap() {
+        var nantes = {lat: 47.219564, lng: -1.557407};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: nantes
+        });
+        var marker = new google.maps.Marker({
+            position: nantes,
+            map: map
+        });
+    }
+
+    function myFunction() {
+        ajouter un point qui peut etre deplacer
+        https://developers.google.com/maps/documentation/javascript/markers?hl=fr
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVytr-0PTBxvjZgG5jqZSTrY2rEEz9PKg&callback=initMap">
+</script>
+</body>
+</html>

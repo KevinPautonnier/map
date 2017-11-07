@@ -16,7 +16,7 @@
         });
     }
 
-    function myFunction() {
+    function addMarker() {
         animatedAddButton();
         var marker = new google.maps.Marker({
             position: map.getCenter(),
@@ -36,21 +36,32 @@
 
         infowindow.open(map, marker);
     }
+
+
+    function editMarker() {
+        animatedEditButton();
+    }
     
     function animatedAddButton() {
         $("#editButton").css("display", "none");
         //$("#form").css("alignItems", "flex-start");
         $('#addButton').animate({"width": "80%", "position": "absolute", "top": "0"});
     }
+
+    function animatedEditButton() {
+        $("#addButton").css("display", "none");
+        //$("#form").css("alignItems", "flex-start");
+        $('#editButton').animate({"width": "80%", "position": "absolute", "top": "0"});
+    }
 </script>
 <div id="map"></div>
 <div id="form">
     <button id="addButton" class="mdc-button
                mdc-button--raised
-               mdc-ripple-surface" onclick="myFunction()">Ajouter un marker</button>
+               mdc-ripple-surface" onclick="addMarker()">Ajouter un marker</button>
     <button id="editButton" class="mdc-button
                mdc-button--raised
-               mdc-ripple-surface" onclick="">Modifier un marker</button>
+               mdc-ripple-surface" onclick="editMarker()">Modifier un marker</button>
 </div>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVytr-0PTBxvjZgG5jqZSTrY2rEEz9PKg&callback=initMap">

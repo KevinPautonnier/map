@@ -13,15 +13,31 @@
 <div id="map"></div>
 <div id="form">
 
-    <button id="backButton" class="mdc-button
-               mdc-button--raised
-               mdc-ripple-surface" onclick="back()"><i class="material-icons">keyboard_backspace</i></button>
-    <button id="addButton" class="mdc-button
-               mdc-button--raised
-               mdc-ripple-surface" onclick="addMarker()">Ajouter un marker</button>
-    <button id="editButton" class="mdc-button
-               mdc-button--raised
-               mdc-ripple-surface" onclick="editMarker()">Modifier un marker</button>
+    <button id="backButton" class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="back()">
+        <i class="material-icons">keyboard_backspace</i>
+    </button>
+
+    <div id="addPanel">
+        <button id="addButton" class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedAddButton()">
+            Ajouter un marker
+        </button>
+        <div id="addSubButton">
+            <button class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedAddButton()">
+                Positionner sois meme un marker sur la map
+            </button>
+            <button class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedAddButton()">
+                Ajouter un marker avec le nom du lieu
+            </button>
+            <button class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedAddButton()">
+                Ajouter un marker avec la latitude et la longitude
+            </button>
+        </div>
+    </div>
+
+    <button id="editButton" class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedEditButton()">
+        Modifier un marker
+    </button>
+
 </div>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVytr-0PTBxvjZgG5jqZSTrY2rEEz9PKg&callback=initMap">

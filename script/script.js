@@ -7,7 +7,6 @@ function initMap() {
 }
 
 function addMarker() {
-    animatedAddButton();
     var marker = new google.maps.Marker({
         position: map.getCenter(),
         map: map,
@@ -37,6 +36,7 @@ function animatedAddButton() {
     //$("#form").css("alignItems", "flex-start");
     $('#addButton').animate({"width": "80%", "position": "absolute", "top": "0"});
     $('#backButton').css("display", "flex");
+    $('#addSubButton>button').css('display', 'block');
 }
 
 function animatedEditButton() {
@@ -50,4 +50,5 @@ function back() {
     $('#addButton').removeAttr('style');
     $('#editButton').removeAttr('style');
     $('#backButton').css("display", "none");
+    $('#addSubButton>button').css('display', 'none');
 }

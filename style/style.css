@@ -16,9 +16,6 @@ body {margin: 0; display: flex;}
     width: max-content;
     position: absolute;
 }
-#form>button:nth-child(2){
-    top: 40vh;
-}
 #backButton{
     position: absolute;
     top: 0;
@@ -26,4 +23,29 @@ body {margin: 0; display: flex;}
     display: none;
     align-items: center;
     justify-content: center;
+}
+#addPanel{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addButton{
+    top: 40vh;
+}
+#editButton{
+    top: calc(40vh + 50px);
+}
+#addSubButton{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#addSubButton button{
+    display: none;
+    position: relative;
 }

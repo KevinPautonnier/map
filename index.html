@@ -11,24 +11,34 @@
             zoom: 10,
             center: nantes
         });
-        var marker = new google.maps.Marker({
-            position: nantes,
-            map: map
-        });
     }
 
     function myFunction() {
         var marker = new google.maps.Marker({
             position: map.getCenter(),
             map: map,
-            draggable: true,
-            title: "Drag me!"
+            draggable: true
         });
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<div id="bodyContent">'+
+            '<p>Drag me</p>'+
+            '</div>'+
+            '</div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        infowindow.open(map, marker);
     }
 </script>
 <div id="map"></div>
-<div id="form">
-    <button onclick="myFunction()">Add marker</button>
+<div id="aside">
+    <div id="form">
+        <button onclick="myFunction()">Ajouter un marker</button>
+        <button onclick="">Modifier un marker</button>
+    </div>
 </div>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVytr-0PTBxvjZgG5jqZSTrY2rEEz9PKg&callback=initMap">

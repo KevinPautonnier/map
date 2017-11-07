@@ -4,58 +4,18 @@
     <link rel="stylesheet"
           href="node_modules/material-components-web/dist/material-components-web.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 </head>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    function initMap() {
-        var nantes = {lat: 47.219564, lng: -1.557407};
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: nantes
-        });
-    }
-
-    function addMarker() {
-        animatedAddButton();
-        var marker = new google.maps.Marker({
-            position: map.getCenter(),
-            map: map,
-            draggable: true
-        });
-        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<div id="bodyContent">'+
-            '<p>Drag me</p>'+
-            '</div>'+
-            '</div>';
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        infowindow.open(map, marker);
-    }
-
-
-    function editMarker() {
-        animatedEditButton();
-    }
-    
-    function animatedAddButton() {
-        $("#editButton").css("display", "none");
-        //$("#form").css("alignItems", "flex-start");
-        $('#addButton').animate({"width": "80%", "position": "absolute", "top": "0"});
-    }
-
-    function animatedEditButton() {
-        $("#addButton").css("display", "none");
-        //$("#form").css("alignItems", "flex-start");
-        $('#editButton').animate({"width": "80%", "position": "absolute", "top": "0"});
-    }
-</script>
+<script src="script/script.js"></script>
 <div id="map"></div>
 <div id="form">
+
+    <button id="backButton" class="mdc-button
+               mdc-button--raised
+               mdc-ripple-surface" onclick="back()"><i class="material-icons">keyboard_backspace</i></button>
     <button id="addButton" class="mdc-button
                mdc-button--raised
                mdc-ripple-surface" onclick="addMarker()">Ajouter un marker</button>

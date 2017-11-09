@@ -13,7 +13,7 @@
 <div id="map"></div>
 <div id="form">
 
-    <button id="backButton" class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="back()">
+    <button id="backButton" class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="firstBack()">
         <i class="material-icons">keyboard_backspace</i>
     </button>
 
@@ -22,10 +22,10 @@
             <i class="material-icons">add</i>
         </button>
         <div id="addSubButton">
-            <button class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedAddButton()">
+            <button id="positionMarker" class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="addMarker()">
                 Positionner un marker sur la map
             </button>
-            <button class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedAddButton()">
+            <button id="locationMarker" class="mdc-button mdc-button--raised mdc-ripple-surface" onclick="animatedAddMarker()">
                 Ajouter un marker avec le nom du lieu
             </button>
         </div>

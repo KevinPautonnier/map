@@ -22,11 +22,21 @@ body {margin: 0; display: flex;}
     width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 #addSubButton> button {
     display: none;
     margin: 4px;
+    width: fit-content;
+}
+#addSubButton>button:nth-child(1){
+    position: relative;
+    top: 40vh;
+}
+#addSubButton>button:nth-child(2){
+    position: relative;
+    top: calc(40vh + 20px);
 }
 #backButton {
     position: absolute;
@@ -35,8 +45,6 @@ body {margin: 0; display: flex;}
 }
 #addPanel{
     height: 100vh;
-    display: flex;
-    align-items: center;
 }
 /*
 #form{

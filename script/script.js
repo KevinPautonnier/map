@@ -7,7 +7,8 @@ function initMap() {
 }
 
 function addMarker() {
-    var marker = new google.maps.Marker({
+    animatedPositionMMarker();
+    marker = new google.maps.Marker({
         position: map.getCenter(),
         map: map,
         draggable: true
@@ -26,11 +27,6 @@ function addMarker() {
     infowindow.open(map, marker);
 }
 
-
-function editMarker() {
-    animatedEditButton();
-}
-
 function animatedAddButton() {
     $("#addButton").css("display", "none");
     $('#backButton').css("display", "flex");
@@ -38,18 +34,42 @@ function animatedAddButton() {
     $('#addSubButton').animate({"width": "30vw"});
 }
 
-function animatedEditButton() {
-    $("#addButton").css("display", "none");
+function animatedAddMarker() {
+    $("#positionMarker").css("display", "none");
     //$("#form").css("alignItems", "flex-start");
-    $('#editButton').animate({"width": "80%", "position": "absolute", "top": "0"});
-    $('#backButton').css("display", "flex");
+    $('#locationMarker').animate({"width": "100%", "position": "absolute", "top": "0"});
+    $('#backButton').attr("onclick", "addBack()");
 }
 
-function back() {
+function animatedPositionMMarker() {
+    $("#locationMarker").css("display", "none");
+    //$("#form").css("alignItems", "flex-start");
+    $('#positionMarker').animate({"width": "100%", "position": "absolute", "top": "0"});
+    $('#backButton').attr("onclick", "positionBack()");
+}
+
+function firstBack() {
     $('#addSubButton').animate({"width": "0"}, "fast", "swing", function () {
         $('#addSubButton>button').css('display', 'none');
         $('#addButton').removeAttr('style');
         $('#editButton').removeAttr('style');
         $('#backButton').css("display", "none");
     });
+}
+
+function addBack() {
+    var newHeight = $('#addSubButton').height()*0.4+20;
+    $('#backButton').attr("onclick", "firstBack()");
+    $('#addSubButton>button').css('display', 'block');
+    $('#locationMarker').animate({"position": "relative", "top": newHeight});
+    $('#locationMarker').css("width", "fit-content");
+}
+
+function positionBack() {
+    marker.setMap(null);
+    var newHeight = $('#addSubButton').height()*0.4;
+    $('#backButton').attr("onclick", "firstBack()");
+    $('#addSubButton>button').css('display', 'block');
+    $('#positionMarker').animate({"position": "relative", "top": newHeight});
+    $('#positionMarker').css("width", "fit-content");
 }

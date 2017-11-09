@@ -32,11 +32,10 @@ function editMarker() {
 }
 
 function animatedAddButton() {
-    $("#editButton").css("display", "none");
-    //$("#form").css("alignItems", "flex-start");
-    $('#addButton').animate({"width": "80%", "position": "absolute", "top": "0"});
+    $("#addButton").css("display", "none");
     $('#backButton').css("display", "flex");
     $('#addSubButton>button').css('display', 'block');
+    $('#addSubButton').animate({"width": "30vw"});
 }
 
 function animatedEditButton() {
@@ -47,8 +46,10 @@ function animatedEditButton() {
 }
 
 function back() {
-    $('#addButton').removeAttr('style');
-    $('#editButton').removeAttr('style');
-    $('#backButton').css("display", "none");
-    $('#addSubButton>button').css('display', 'none');
+    $('#addSubButton').animate({"width": "0"}, "fast", "swing", function () {
+        $('#addSubButton>button').css('display', 'none');
+        $('#addButton').removeAttr('style');
+        $('#editButton').removeAttr('style');
+        $('#backButton').css("display", "none");
+    });
 }

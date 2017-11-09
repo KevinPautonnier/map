@@ -1,8 +1,44 @@
 body {margin: 0; display: flex;}
 #map {
     height: 100vh;
-    width: 58vw;
+    width: 100vw;
 }
+#form {
+    position: relative;
+}
+#backButton {
+    display: none;
+}
+#addButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color: #3F51B5;
+}
+#addSubButton {
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#addSubButton> button {
+    display: none;
+    margin: 4px;
+}
+#backButton {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+}
+#addPanel{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+/*
 #form{
     width: 42vw;
     display: flex;
@@ -48,4 +84,4 @@ body {margin: 0; display: flex;}
 #addSubButton button{
     display: none;
     position: relative;
-}
+}*/
